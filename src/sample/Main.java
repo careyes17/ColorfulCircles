@@ -18,6 +18,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
 import static java.lang.Math.random;
 import static java.lang.Math.random;
 
@@ -63,7 +64,7 @@ public class Main extends Application {
         circles.setEffect(new BoxBlur(10, 10, 3));
 
         Timeline timeline = new Timeline();
-        for (Node circle: circles.getChildren()) {
+        for (Node circle : circles.getChildren()) {
             timeline.getKeyFrames().addAll(
                     new KeyFrame(Duration.ZERO, // set start position at 0
                             new KeyValue(circle.translateXProperty(), random() * 800),
@@ -75,7 +76,7 @@ public class Main extends Application {
                     )
             );
         }
-// play 40s of animation
+        // play 40s of animation
         timeline.play();
         primaryStage.show();
     }
